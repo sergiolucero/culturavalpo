@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_1094a70e9585089568bb3a963f19d016 {
+                #map_ef327d83beee25569619876c914a3a29 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -55,166 +55,250 @@
     
     
 <style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    #header {
+        text-align: center;
+        padding: 10px;
+        background-color: #f8f9fa;
+        border-bottom: 2px solid #ddd;
+        z-index: 1000;
+    }
+
+    #main-container {
+        display: flex;
+        flex: 1;
+        overflow: hidden;
+    }
+
+    #map-wrapper {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+    }
+
     .folium-map {
         transform: rotate(30deg);
         transform-origin: center center;
+        width: 100%;
+        height: 100%;
     }
-    /* Adjust the container to prevent clipping */
-    #map-container {
-        overflow: visible;
-        padding: 100px;
+
+    #sidebar {
+        width: 400px;
+        background-color: white;
+        border-left: 2px solid #ddd;
+        overflow-y: auto;
+        padding: 20px;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    }
+
+    #sidebar h3 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 15px;
+        margin-top: 0;
+    }
+
+    #sidebar table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 12px;
+    }
+
+    #sidebar thead tr {
+        background-color: #f0f0f0;
+    }
+
+    #sidebar th {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 2px solid #ddd;
+        font-size: 11px;
+    }
+
+    #sidebar td {
+        padding: 6px 8px;
+        border-bottom: 1px solid #eee;
+        font-size: 11px;
+    }
+
+    #sidebar tr:hover {
+        background-color: #f9f9f9;
+    }
+
+    #sidebar a {
+        color: #0066cc;
+        text-decoration: none;
+    }
+
+    #sidebar a:hover {
+        text-decoration: underline;
     }
 </style>
     
-             <h3 align="center" style="font-size:16px"><b>Valparaíso BAC</b></h3>
-             
-    
-<div style="margin: 20px; padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-    <h3 style="text-align: center; color: #333; margin-bottom: 15px;">Participating Businesses</h3>
-    <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-        <thead>
-            <tr style="background-color: #f0f0f0;">
-                <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">#</th>
-                <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Name</th>
-                <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Address</th>
-                <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Phone</th>
-                <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Instagram</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 8px;">1</td>
-                <td style="padding: 8px; font-weight: bold;">Corazón Continto</td>
-                <td style="padding: 8px;">Pilcomayo 517, Cerro Alegre</td>
-                <td style="padding: 8px;">+56 9 7256 9081</td>
-                <td style="padding: 8px;"><a href="https://www.instagram.com/corazoncontinto.cl" target="_blank">@corazoncontinto.cl</a></td>
-            </tr>
-    
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 8px;">2</td>
-                <td style="padding: 8px; font-weight: bold;">Vinilo Café</td>
-                <td style="padding: 8px;">Almirante Montt 448, Cerro Alegre</td>
-                <td style="padding: 8px;">+56 32 215 5074</td>
-                <td style="padding: 8px;"><a href="https://www.instagram.com/vinilocafe" target="_blank">@vinilocafe</a></td>
-            </tr>
-    
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 8px;">3</td>
-                <td style="padding: 8px; font-weight: bold;">Lemutt Bar</td>
-                <td style="padding: 8px;">Gálvez 233, Cerro Concepción</td>
-                <td style="padding: 8px;">+56 9 8452 7998</td>
-                <td style="padding: 8px;"><a href="https://www.instagram.com/lemuttbar" target="_blank">@lemuttbar</a></td>
-            </tr>
-    
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 8px;">4</td>
-                <td style="padding: 8px; font-weight: bold;">Casa Alegre</td>
-                <td style="padding: 8px;">Paseo Dimalow 249, Cerro Alegre</td>
-                <td style="padding: 8px;">+56 9 8243 4567</td>
-                <td style="padding: 8px;"><a href="https://www.instagram.com/casalegrevalparaiso" target="_blank">@casalegrevalparaiso</a></td>
-            </tr>
-    
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 8px;">5</td>
-                <td style="padding: 8px; font-weight: bold;">El Terrat</td>
-                <td style="padding: 8px;">Paseo Dimalow 263, Cerro Alegre</td>
-                <td style="padding: 8px;">+56 9 5017 4867</td>
-                <td style="padding: 8px;"><a href="https://www.instagram.com/terratvalpo" target="_blank">@terratvalpo</a></td>
-            </tr>
-    
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 8px;">6</td>
-                <td style="padding: 8px; font-weight: bold;">Malizioso Pizzería</td>
-                <td style="padding: 8px;">Almirante Montt 532, Cerro Concepción</td>
-                <td style="padding: 8px;">+56 9 6858 3587</td>
-                <td style="padding: 8px;"><a href="https://www.instagram.com/malizioso.pizzeria" target="_blank">@malizioso.pizzeria</a></td>
-            </tr>
-    
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 8px;">7</td>
-                <td style="padding: 8px; font-weight: bold;">Medialuna Valpo</td>
-                <td style="padding: 8px;">Pilcomayo 581, Cerro Alegre</td>
-                <td style="padding: 8px;">+56 32 344 6702</td>
-                <td style="padding: 8px;"><a href="https://www.instagram.com/medialunavalpo" target="_blank">@medialunavalpo</a></td>
-            </tr>
-    
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 8px;">8</td>
-                <td style="padding: 8px; font-weight: bold;">Galería Bahía Utópica</td>
-                <td style="padding: 8px;">Almirante Montt 372, Cerro Concepción</td>
-                <td style="padding: 8px;">+56 9 5352 6979</td>
-                <td style="padding: 8px;"><a href="https://www.instagram.com/galeriabahiautopica" target="_blank">@galeriabahiautopica</a></td>
-            </tr>
-    
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 8px;">9</td>
-                <td style="padding: 8px; font-weight: bold;">Sala Galia</td>
-                <td style="padding: 8px;">Galos 685, Cerro Concepción</td>
-                <td style="padding: 8px;">No public phone</td>
-                <td style="padding: 8px;"><a href="https://www.instagram.com/sala_galia" target="_blank">@sala_galia</a></td>
-            </tr>
-    
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 8px;">10</td>
-                <td style="padding: 8px; font-weight: bold;">Fauna Hotel & Rte.</td>
-                <td style="padding: 8px;">Paseo Dimalow 166, Cerro Alegre</td>
-                <td style="padding: 8px;">+56 32 327 3485</td>
-                <td style="padding: 8px;"><a href="https://www.instagram.com/faunahotelrestaurante" target="_blank">@faunahotelrestaurante</a></td>
-            </tr>
-    
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 8px;">11</td>
-                <td style="padding: 8px; font-weight: bold;">Alma Mía Valparaíso</td>
-                <td style="padding: 8px;">Almirante Montt 402, Cerro Alegre</td>
-                <td style="padding: 8px;">+56 32 238 6077</td>
-                <td style="padding: 8px;"><a href="https://www.instagram.com/almamiavalparaiso" target="_blank">@almamiavalparaiso</a></td>
-            </tr>
-    
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 8px;">12</td>
-                <td style="padding: 8px; font-weight: bold;">Entre Cerros Café</td>
-                <td style="padding: 8px;">Almirante Montt 399, Cerro Alegre</td>
-                <td style="padding: 8px;">+56 9 8734 6835</td>
-                <td style="padding: 8px;"><a href="https://www.instagram.com/entrecerrosvalparaiso" target="_blank">@entrecerrosvalparaiso</a></td>
-            </tr>
-    
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 8px;">13</td>
-                <td style="padding: 8px; font-weight: bold;">SEPTIMA Pastelería</td>
-                <td style="padding: 8px;">Concepción 213, Cerro Concepción</td>
-                <td style="padding: 8px;">+56 32 318 4038</td>
-                <td style="padding: 8px;"><a href="https://www.instagram.com/septima.pasteleria" target="_blank">@septima.pasteleria</a></td>
-            </tr>
-    
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 8px;">14</td>
-                <td style="padding: 8px; font-weight: bold;">Fat Kid</td>
-                <td style="padding: 8px;">Lautaro Rosas 450, Cerro Alegre</td>
-                <td style="padding: 8px;">+56 9 7462 8769</td>
-                <td style="padding: 8px;"><a href="https://www.instagram.com/fatkidburgers" target="_blank">@fatkidburgers</a></td>
-            </tr>
-    
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 8px;">15</td>
-                <td style="padding: 8px; font-weight: bold;">Momo</td>
-                <td style="padding: 8px;">Almirante Montt 427, Cerro Alegre</td>
-                <td style="padding: 8px;">+56 9 8225 6173</td>
-                <td style="padding: 8px;"><a href="https://www.instagram.com/momovalparaiso" target="_blank">@momovalparaiso</a></td>
-            </tr>
-    
-        </tbody>
-    </table>
+<div id="header">
+    <h3 style="font-size:16px; margin: 0;"><b>Valparaíso BAC</b></h3>
 </div>
     
-            <div class="folium-map" id="map_1094a70e9585089568bb3a963f19d016" ></div>
+<div id="main-container">
+    <div id="map-wrapper">
+    
+    </div>
+    <div id="sidebar">
+        <h3>Participating Businesses</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Instagram</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>1</td>
+                    <td style="font-weight: bold;">Corazón Continto</td>
+                    <td>Pilcomayo 517, Cerro Alegre</td>
+                    <td>+56 9 7256 9081</td>
+                    <td><a href="https://www.instagram.com/corazoncontinto.cl" target="_blank">@corazoncontinto.cl</a></td>
+                </tr>
+    
+                <tr>
+                    <td>2</td>
+                    <td style="font-weight: bold;">Vinilo Café</td>
+                    <td>Almirante Montt 448, Cerro Alegre</td>
+                    <td>+56 32 215 5074</td>
+                    <td><a href="https://www.instagram.com/vinilocafe" target="_blank">@vinilocafe</a></td>
+                </tr>
+    
+                <tr>
+                    <td>3</td>
+                    <td style="font-weight: bold;">Lemutt Bar</td>
+                    <td>Gálvez 233, Cerro Concepción</td>
+                    <td>+56 9 8452 7998</td>
+                    <td><a href="https://www.instagram.com/lemuttbar" target="_blank">@lemuttbar</a></td>
+                </tr>
+    
+                <tr>
+                    <td>4</td>
+                    <td style="font-weight: bold;">Casa Alegre</td>
+                    <td>Paseo Dimalow 249, Cerro Alegre</td>
+                    <td>+56 9 8243 4567</td>
+                    <td><a href="https://www.instagram.com/casalegrevalparaiso" target="_blank">@casalegrevalparaiso</a></td>
+                </tr>
+    
+                <tr>
+                    <td>5</td>
+                    <td style="font-weight: bold;">El Terrat</td>
+                    <td>Paseo Dimalow 263, Cerro Alegre</td>
+                    <td>+56 9 5017 4867</td>
+                    <td><a href="https://www.instagram.com/terratvalpo" target="_blank">@terratvalpo</a></td>
+                </tr>
+    
+                <tr>
+                    <td>6</td>
+                    <td style="font-weight: bold;">Malizioso Pizzería</td>
+                    <td>Almirante Montt 532, Cerro Concepción</td>
+                    <td>+56 9 6858 3587</td>
+                    <td><a href="https://www.instagram.com/malizioso.pizzeria" target="_blank">@malizioso.pizzeria</a></td>
+                </tr>
+    
+                <tr>
+                    <td>7</td>
+                    <td style="font-weight: bold;">Medialuna Valpo</td>
+                    <td>Pilcomayo 581, Cerro Alegre</td>
+                    <td>+56 32 344 6702</td>
+                    <td><a href="https://www.instagram.com/medialunavalpo" target="_blank">@medialunavalpo</a></td>
+                </tr>
+    
+                <tr>
+                    <td>8</td>
+                    <td style="font-weight: bold;">Galería Bahía Utópica</td>
+                    <td>Almirante Montt 372, Cerro Concepción</td>
+                    <td>+56 9 5352 6979</td>
+                    <td><a href="https://www.instagram.com/galeriabahiautopica" target="_blank">@galeriabahiautopica</a></td>
+                </tr>
+    
+                <tr>
+                    <td>9</td>
+                    <td style="font-weight: bold;">Sala Galia</td>
+                    <td>Galos 685, Cerro Concepción</td>
+                    <td>No public phone</td>
+                    <td><a href="https://www.instagram.com/sala_galia" target="_blank">@sala_galia</a></td>
+                </tr>
+    
+                <tr>
+                    <td>10</td>
+                    <td style="font-weight: bold;">Fauna Hotel & Rte.</td>
+                    <td>Paseo Dimalow 166, Cerro Alegre</td>
+                    <td>+56 32 327 3485</td>
+                    <td><a href="https://www.instagram.com/faunahotelrestaurante" target="_blank">@faunahotelrestaurante</a></td>
+                </tr>
+    
+                <tr>
+                    <td>11</td>
+                    <td style="font-weight: bold;">Alma Mía Valparaíso</td>
+                    <td>Almirante Montt 402, Cerro Alegre</td>
+                    <td>+56 32 238 6077</td>
+                    <td><a href="https://www.instagram.com/almamiavalparaiso" target="_blank">@almamiavalparaiso</a></td>
+                </tr>
+    
+                <tr>
+                    <td>12</td>
+                    <td style="font-weight: bold;">Entre Cerros Café</td>
+                    <td>Almirante Montt 399, Cerro Alegre</td>
+                    <td>+56 9 8734 6835</td>
+                    <td><a href="https://www.instagram.com/entrecerrosvalparaiso" target="_blank">@entrecerrosvalparaiso</a></td>
+                </tr>
+    
+                <tr>
+                    <td>13</td>
+                    <td style="font-weight: bold;">SEPTIMA Pastelería</td>
+                    <td>Concepción 213, Cerro Concepción</td>
+                    <td>+56 32 318 4038</td>
+                    <td><a href="https://www.instagram.com/septima.pasteleria" target="_blank">@septima.pasteleria</a></td>
+                </tr>
+    
+                <tr>
+                    <td>14</td>
+                    <td style="font-weight: bold;">Fat Kid</td>
+                    <td>Lautaro Rosas 450, Cerro Alegre</td>
+                    <td>+56 9 7462 8769</td>
+                    <td><a href="https://www.instagram.com/fatkidburgers" target="_blank">@fatkidburgers</a></td>
+                </tr>
+    
+                <tr>
+                    <td>15</td>
+                    <td style="font-weight: bold;">Momo</td>
+                    <td>Almirante Montt 427, Cerro Alegre</td>
+                    <td>+56 9 8225 6173</td>
+                    <td><a href="https://www.instagram.com/momovalparaiso" target="_blank">@momovalparaiso</a></td>
+                </tr>
+    
+            </tbody>
+        </table>
+    </div>
+</div>
+    
+            <div class="folium-map" id="map_ef327d83beee25569619876c914a3a29" ></div>
         
 </body>
 <script>
     
     
-            var map_1094a70e9585089568bb3a963f19d016 = L.map(
-                "map_1094a70e9585089568bb3a963f19d016",
+            var map_ef327d83beee25569619876c914a3a29 = L.map(
+                "map_ef327d83beee25569619876c914a3a29",
                 {
                     center: [-33.04, -71.628],
                     crs: L.CRS.EPSG3857,
@@ -231,7 +315,7 @@
 
         
     
-            var tile_layer_469127003449f5108a71ee20877b32e0 = L.tileLayer(
+            var tile_layer_585274c6e49c347eb81be1076add0ab7 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -248,17 +332,17 @@
             );
         
     
-            tile_layer_469127003449f5108a71ee20877b32e0.addTo(map_1094a70e9585089568bb3a963f19d016);
+            tile_layer_585274c6e49c347eb81be1076add0ab7.addTo(map_ef327d83beee25569619876c914a3a29);
         
     
-            var marker_16acd78f7a4b0eef498a4e824017e372 = L.marker(
+            var marker_2500bcb8460c6961913c8435c2c04f92 = L.marker(
                 [-33.041, -71.627],
                 {
 }
-            ).addTo(map_1094a70e9585089568bb3a963f19d016);
+            ).addTo(map_ef327d83beee25569619876c914a3a29);
         
     
-            var icon_a66cafb11849e8a40ad8d92157f5b0a2 = L.AwesomeMarkers.icon(
+            var icon_44f5f36275705deb9e59bd4ce6c1a4b7 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkred",
   "iconColor": "white",
@@ -269,24 +353,24 @@
             );
         
     
-        var popup_8ce1eeb853afab50419fbfdb361b1f63 = L.popup({
+        var popup_b59a005503b762117fca7318a379b0e8 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_5a6506527209aee7bc2e5d7a1c220ccf = $(`<div id="html_5a6506527209aee7bc2e5d7a1c220ccf" style="width: 100.0%; height: 100.0%;">         <b>Corazón Continto</b><br>         <hr style="margin: 3px 0;">         🏠 Pilcomayo 517, Cerro Alegre<br>         📞 +56 9 7256 9081<br>         <a href='https://www.instagram.com/corazoncontinto.cl' target='_blank'>@corazoncontinto.cl</a>     </div>`)[0];
-                popup_8ce1eeb853afab50419fbfdb361b1f63.setContent(html_5a6506527209aee7bc2e5d7a1c220ccf);
+                var html_90109a9f8aa74fe317a630775b5cb286 = $(`<div id="html_90109a9f8aa74fe317a630775b5cb286" style="width: 100.0%; height: 100.0%;">         <b>Corazón Continto</b><br>         <hr style="margin: 3px 0;">         🏠 Pilcomayo 517, Cerro Alegre<br>         📞 +56 9 7256 9081<br>         <a href='https://www.instagram.com/corazoncontinto.cl' target='_blank'>@corazoncontinto.cl</a>     </div>`)[0];
+                popup_b59a005503b762117fca7318a379b0e8.setContent(html_90109a9f8aa74fe317a630775b5cb286);
             
         
 
-        marker_16acd78f7a4b0eef498a4e824017e372.bindPopup(popup_8ce1eeb853afab50419fbfdb361b1f63)
+        marker_2500bcb8460c6961913c8435c2c04f92.bindPopup(popup_b59a005503b762117fca7318a379b0e8)
         ;
 
         
     
     
-            marker_16acd78f7a4b0eef498a4e824017e372.bindTooltip(
+            marker_2500bcb8460c6961913c8435c2c04f92.bindTooltip(
                 `<div>
                      Corazón Continto
                  </div>`,
@@ -296,17 +380,17 @@
             );
         
     
-                marker_16acd78f7a4b0eef498a4e824017e372.setIcon(icon_a66cafb11849e8a40ad8d92157f5b0a2);
+                marker_2500bcb8460c6961913c8435c2c04f92.setIcon(icon_44f5f36275705deb9e59bd4ce6c1a4b7);
             
     
-            var marker_c57e439af0b07812464042d167ec9f9e = L.marker(
+            var marker_dcdc5cd015a87665e33829c4e960cf7e = L.marker(
                 [-33.0375, -71.6275],
                 {
 }
-            ).addTo(map_1094a70e9585089568bb3a963f19d016);
+            ).addTo(map_ef327d83beee25569619876c914a3a29);
         
     
-            var icon_83ce517d26a6bcb83b63148cedf5c331 = L.AwesomeMarkers.icon(
+            var icon_853377437bd4ede15e6fa8ab031625fd = L.AwesomeMarkers.icon(
                 {
   "markerColor": "cadetblue",
   "iconColor": "white",
@@ -317,24 +401,24 @@
             );
         
     
-        var popup_b64fba3c6c46a774dea540848ff32314 = L.popup({
+        var popup_f6f8ddf946a8232134d42fc9e1f31fcd = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_2abec9a99334c5f87762fbf3c7afbd2c = $(`<div id="html_2abec9a99334c5f87762fbf3c7afbd2c" style="width: 100.0%; height: 100.0%;">         <b>Vinilo Café</b><br>         <hr style="margin: 3px 0;">         🏠 Almirante Montt 448, Cerro Alegre<br>         📞 +56 32 215 5074<br>         <a href='https://www.instagram.com/vinilocafe' target='_blank'>@vinilocafe</a>     </div>`)[0];
-                popup_b64fba3c6c46a774dea540848ff32314.setContent(html_2abec9a99334c5f87762fbf3c7afbd2c);
+                var html_c4da3b699f51b9e9cae79c0a89f154cb = $(`<div id="html_c4da3b699f51b9e9cae79c0a89f154cb" style="width: 100.0%; height: 100.0%;">         <b>Vinilo Café</b><br>         <hr style="margin: 3px 0;">         🏠 Almirante Montt 448, Cerro Alegre<br>         📞 +56 32 215 5074<br>         <a href='https://www.instagram.com/vinilocafe' target='_blank'>@vinilocafe</a>     </div>`)[0];
+                popup_f6f8ddf946a8232134d42fc9e1f31fcd.setContent(html_c4da3b699f51b9e9cae79c0a89f154cb);
             
         
 
-        marker_c57e439af0b07812464042d167ec9f9e.bindPopup(popup_b64fba3c6c46a774dea540848ff32314)
+        marker_dcdc5cd015a87665e33829c4e960cf7e.bindPopup(popup_f6f8ddf946a8232134d42fc9e1f31fcd)
         ;
 
         
     
     
-            marker_c57e439af0b07812464042d167ec9f9e.bindTooltip(
+            marker_dcdc5cd015a87665e33829c4e960cf7e.bindTooltip(
                 `<div>
                      Vinilo Café
                  </div>`,
@@ -344,17 +428,17 @@
             );
         
     
-                marker_c57e439af0b07812464042d167ec9f9e.setIcon(icon_83ce517d26a6bcb83b63148cedf5c331);
+                marker_dcdc5cd015a87665e33829c4e960cf7e.setIcon(icon_853377437bd4ede15e6fa8ab031625fd);
             
     
-            var marker_8a849b6911ba5a4738d722a54f750d0a = L.marker(
+            var marker_eda9fb3a566b78cacc129fd45f3fb954 = L.marker(
                 [-33.037, -71.63],
                 {
 }
-            ).addTo(map_1094a70e9585089568bb3a963f19d016);
+            ).addTo(map_ef327d83beee25569619876c914a3a29);
         
     
-            var icon_21fff19ffd9d3b47cb6e401059cb12be = L.AwesomeMarkers.icon(
+            var icon_e7c1a86f38d7e3fa34ea5349353deff4 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkpurple",
   "iconColor": "white",
@@ -365,24 +449,24 @@
             );
         
     
-        var popup_701580ed9cc2095d2f98d71a85c7b306 = L.popup({
+        var popup_d41329b80d0a1d9e8c45b2c0c9591c5a = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_481df8550e55bdd8e8752e88404dfc7b = $(`<div id="html_481df8550e55bdd8e8752e88404dfc7b" style="width: 100.0%; height: 100.0%;">         <b>Lemutt Bar</b><br>         <hr style="margin: 3px 0;">         🏠 Gálvez 233, Cerro Concepción<br>         📞 +56 9 8452 7998<br>         <a href='https://www.instagram.com/lemuttbar' target='_blank'>@lemuttbar</a>     </div>`)[0];
-                popup_701580ed9cc2095d2f98d71a85c7b306.setContent(html_481df8550e55bdd8e8752e88404dfc7b);
+                var html_211843f30d1e05d694f7c1c4a9d5aff2 = $(`<div id="html_211843f30d1e05d694f7c1c4a9d5aff2" style="width: 100.0%; height: 100.0%;">         <b>Lemutt Bar</b><br>         <hr style="margin: 3px 0;">         🏠 Gálvez 233, Cerro Concepción<br>         📞 +56 9 8452 7998<br>         <a href='https://www.instagram.com/lemuttbar' target='_blank'>@lemuttbar</a>     </div>`)[0];
+                popup_d41329b80d0a1d9e8c45b2c0c9591c5a.setContent(html_211843f30d1e05d694f7c1c4a9d5aff2);
             
         
 
-        marker_8a849b6911ba5a4738d722a54f750d0a.bindPopup(popup_701580ed9cc2095d2f98d71a85c7b306)
+        marker_eda9fb3a566b78cacc129fd45f3fb954.bindPopup(popup_d41329b80d0a1d9e8c45b2c0c9591c5a)
         ;
 
         
     
     
-            marker_8a849b6911ba5a4738d722a54f750d0a.bindTooltip(
+            marker_eda9fb3a566b78cacc129fd45f3fb954.bindTooltip(
                 `<div>
                      Lemutt Bar
                  </div>`,
@@ -392,17 +476,17 @@
             );
         
     
-                marker_8a849b6911ba5a4738d722a54f750d0a.setIcon(icon_21fff19ffd9d3b47cb6e401059cb12be);
+                marker_eda9fb3a566b78cacc129fd45f3fb954.setIcon(icon_e7c1a86f38d7e3fa34ea5349353deff4);
             
     
-            var marker_de994eb9d87bde6da109fa50dcf97732 = L.marker(
+            var marker_df30c09f2cced1f263585e62b092b419 = L.marker(
                 [-33.038, -71.6285],
                 {
 }
-            ).addTo(map_1094a70e9585089568bb3a963f19d016);
+            ).addTo(map_ef327d83beee25569619876c914a3a29);
         
     
-            var icon_427c40beed61587c13492e1aef6c73c9 = L.AwesomeMarkers.icon(
+            var icon_0c189a1fc09051877556a4d55c5936a5 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkred",
   "iconColor": "white",
@@ -413,24 +497,24 @@
             );
         
     
-        var popup_468e9e7c6d7d7d00444629c70906b672 = L.popup({
+        var popup_ed0183997f7950aa503dd4bc5138aa00 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_e537cc09ed36341c6389e5bd8283efe5 = $(`<div id="html_e537cc09ed36341c6389e5bd8283efe5" style="width: 100.0%; height: 100.0%;">         <b>Casa Alegre</b><br>         <hr style="margin: 3px 0;">         🏠 Paseo Dimalow 249, Cerro Alegre<br>         📞 +56 9 8243 4567<br>         <a href='https://www.instagram.com/casalegrevalparaiso' target='_blank'>@casalegrevalparaiso</a>     </div>`)[0];
-                popup_468e9e7c6d7d7d00444629c70906b672.setContent(html_e537cc09ed36341c6389e5bd8283efe5);
+                var html_ffa646d36924d2029c6e76b6f6382070 = $(`<div id="html_ffa646d36924d2029c6e76b6f6382070" style="width: 100.0%; height: 100.0%;">         <b>Casa Alegre</b><br>         <hr style="margin: 3px 0;">         🏠 Paseo Dimalow 249, Cerro Alegre<br>         📞 +56 9 8243 4567<br>         <a href='https://www.instagram.com/casalegrevalparaiso' target='_blank'>@casalegrevalparaiso</a>     </div>`)[0];
+                popup_ed0183997f7950aa503dd4bc5138aa00.setContent(html_ffa646d36924d2029c6e76b6f6382070);
             
         
 
-        marker_de994eb9d87bde6da109fa50dcf97732.bindPopup(popup_468e9e7c6d7d7d00444629c70906b672)
+        marker_df30c09f2cced1f263585e62b092b419.bindPopup(popup_ed0183997f7950aa503dd4bc5138aa00)
         ;
 
         
     
     
-            marker_de994eb9d87bde6da109fa50dcf97732.bindTooltip(
+            marker_df30c09f2cced1f263585e62b092b419.bindTooltip(
                 `<div>
                      Casa Alegre
                  </div>`,
@@ -440,17 +524,17 @@
             );
         
     
-                marker_de994eb9d87bde6da109fa50dcf97732.setIcon(icon_427c40beed61587c13492e1aef6c73c9);
+                marker_df30c09f2cced1f263585e62b092b419.setIcon(icon_0c189a1fc09051877556a4d55c5936a5);
             
     
-            var marker_f2d5dd03c6c753fed95860a3a109c4e8 = L.marker(
+            var marker_ce87a34b26e274ddeee50edff88d89f7 = L.marker(
                 [-33.04, -71.628],
                 {
 }
-            ).addTo(map_1094a70e9585089568bb3a963f19d016);
+            ).addTo(map_ef327d83beee25569619876c914a3a29);
         
     
-            var icon_b6f05f7a4dab7c0ee42090926753db86 = L.AwesomeMarkers.icon(
+            var icon_d71732769d96fbf93f657b2ae8960f39 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkred",
   "iconColor": "white",
@@ -461,24 +545,24 @@
             );
         
     
-        var popup_1913fb43bdb18326235110ddcc219406 = L.popup({
+        var popup_5821f71f7f38588f4f895fffb11a9a2b = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_0513d8fd6a7029500816df2eb44661f9 = $(`<div id="html_0513d8fd6a7029500816df2eb44661f9" style="width: 100.0%; height: 100.0%;">         <b>El Terrat</b><br>         <hr style="margin: 3px 0;">         🏠 Paseo Dimalow 263, Cerro Alegre<br>         📞 +56 9 5017 4867<br>         <a href='https://www.instagram.com/terratvalpo' target='_blank'>@terratvalpo</a>     </div>`)[0];
-                popup_1913fb43bdb18326235110ddcc219406.setContent(html_0513d8fd6a7029500816df2eb44661f9);
+                var html_182e2a546d9d2783e5e9903052bcf83d = $(`<div id="html_182e2a546d9d2783e5e9903052bcf83d" style="width: 100.0%; height: 100.0%;">         <b>El Terrat</b><br>         <hr style="margin: 3px 0;">         🏠 Paseo Dimalow 263, Cerro Alegre<br>         📞 +56 9 5017 4867<br>         <a href='https://www.instagram.com/terratvalpo' target='_blank'>@terratvalpo</a>     </div>`)[0];
+                popup_5821f71f7f38588f4f895fffb11a9a2b.setContent(html_182e2a546d9d2783e5e9903052bcf83d);
             
         
 
-        marker_f2d5dd03c6c753fed95860a3a109c4e8.bindPopup(popup_1913fb43bdb18326235110ddcc219406)
+        marker_ce87a34b26e274ddeee50edff88d89f7.bindPopup(popup_5821f71f7f38588f4f895fffb11a9a2b)
         ;
 
         
     
     
-            marker_f2d5dd03c6c753fed95860a3a109c4e8.bindTooltip(
+            marker_ce87a34b26e274ddeee50edff88d89f7.bindTooltip(
                 `<div>
                      El Terrat
                  </div>`,
@@ -488,17 +572,17 @@
             );
         
     
-                marker_f2d5dd03c6c753fed95860a3a109c4e8.setIcon(icon_b6f05f7a4dab7c0ee42090926753db86);
+                marker_ce87a34b26e274ddeee50edff88d89f7.setIcon(icon_d71732769d96fbf93f657b2ae8960f39);
             
     
-            var marker_45d5af468af70efae37613903b577b2f = L.marker(
+            var marker_cd1b4d5e2313698be997c7b306816d62 = L.marker(
                 [-33.0405, -71.6275],
                 {
 }
-            ).addTo(map_1094a70e9585089568bb3a963f19d016);
+            ).addTo(map_ef327d83beee25569619876c914a3a29);
         
     
-            var icon_42b96d80c9f930e4d23956aeb81ab452 = L.AwesomeMarkers.icon(
+            var icon_107f7ba54df4bad614ddb609dd80ab5a = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -509,24 +593,24 @@
             );
         
     
-        var popup_ce1bd663b483402ea7e57fca45a2cc8e = L.popup({
+        var popup_b29e93f47002d109156b8c8e1b6f3476 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_92dcc858b5ead43e28b04c6a4e16f8d8 = $(`<div id="html_92dcc858b5ead43e28b04c6a4e16f8d8" style="width: 100.0%; height: 100.0%;">         <b>Malizioso Pizzería</b><br>         <hr style="margin: 3px 0;">         🏠 Almirante Montt 532, Cerro Concepción<br>         📞 +56 9 6858 3587<br>         <a href='https://www.instagram.com/malizioso.pizzeria' target='_blank'>@malizioso.pizzeria</a>     </div>`)[0];
-                popup_ce1bd663b483402ea7e57fca45a2cc8e.setContent(html_92dcc858b5ead43e28b04c6a4e16f8d8);
+                var html_889ef273b3c9d768212f0c5f334a62d4 = $(`<div id="html_889ef273b3c9d768212f0c5f334a62d4" style="width: 100.0%; height: 100.0%;">         <b>Malizioso Pizzería</b><br>         <hr style="margin: 3px 0;">         🏠 Almirante Montt 532, Cerro Concepción<br>         📞 +56 9 6858 3587<br>         <a href='https://www.instagram.com/malizioso.pizzeria' target='_blank'>@malizioso.pizzeria</a>     </div>`)[0];
+                popup_b29e93f47002d109156b8c8e1b6f3476.setContent(html_889ef273b3c9d768212f0c5f334a62d4);
             
         
 
-        marker_45d5af468af70efae37613903b577b2f.bindPopup(popup_ce1bd663b483402ea7e57fca45a2cc8e)
+        marker_cd1b4d5e2313698be997c7b306816d62.bindPopup(popup_b29e93f47002d109156b8c8e1b6f3476)
         ;
 
         
     
     
-            marker_45d5af468af70efae37613903b577b2f.bindTooltip(
+            marker_cd1b4d5e2313698be997c7b306816d62.bindTooltip(
                 `<div>
                      Malizioso Pizzería
                  </div>`,
@@ -536,17 +620,17 @@
             );
         
     
-                marker_45d5af468af70efae37613903b577b2f.setIcon(icon_42b96d80c9f930e4d23956aeb81ab452);
+                marker_cd1b4d5e2313698be997c7b306816d62.setIcon(icon_107f7ba54df4bad614ddb609dd80ab5a);
             
     
-            var marker_65e1f20c87d82771f3f2a457773d3fed = L.marker(
+            var marker_e7b2f464a93fd4994a70182b6618fa99 = L.marker(
                 [-33.0415, -71.6265],
                 {
 }
-            ).addTo(map_1094a70e9585089568bb3a963f19d016);
+            ).addTo(map_ef327d83beee25569619876c914a3a29);
         
     
-            var icon_05e75fa4d390249647e9295b96e20014 = L.AwesomeMarkers.icon(
+            var icon_e2e3633d4f4a7e3c80ca5e2610252f94 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkred",
   "iconColor": "white",
@@ -557,24 +641,24 @@
             );
         
     
-        var popup_26a9569ea8396097fb732cc696074aef = L.popup({
+        var popup_7a2ab7b542176a2fd04d5191dee4afcc = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_a169465b40274cf61b63db7886f4880f = $(`<div id="html_a169465b40274cf61b63db7886f4880f" style="width: 100.0%; height: 100.0%;">         <b>Medialuna Valpo</b><br>         <hr style="margin: 3px 0;">         🏠 Pilcomayo 581, Cerro Alegre<br>         📞 +56 32 344 6702<br>         <a href='https://www.instagram.com/medialunavalpo' target='_blank'>@medialunavalpo</a>     </div>`)[0];
-                popup_26a9569ea8396097fb732cc696074aef.setContent(html_a169465b40274cf61b63db7886f4880f);
+                var html_acb12eb0d05b3078d2e1e9b761c0beb0 = $(`<div id="html_acb12eb0d05b3078d2e1e9b761c0beb0" style="width: 100.0%; height: 100.0%;">         <b>Medialuna Valpo</b><br>         <hr style="margin: 3px 0;">         🏠 Pilcomayo 581, Cerro Alegre<br>         📞 +56 32 344 6702<br>         <a href='https://www.instagram.com/medialunavalpo' target='_blank'>@medialunavalpo</a>     </div>`)[0];
+                popup_7a2ab7b542176a2fd04d5191dee4afcc.setContent(html_acb12eb0d05b3078d2e1e9b761c0beb0);
             
         
 
-        marker_65e1f20c87d82771f3f2a457773d3fed.bindPopup(popup_26a9569ea8396097fb732cc696074aef)
+        marker_e7b2f464a93fd4994a70182b6618fa99.bindPopup(popup_7a2ab7b542176a2fd04d5191dee4afcc)
         ;
 
         
     
     
-            marker_65e1f20c87d82771f3f2a457773d3fed.bindTooltip(
+            marker_e7b2f464a93fd4994a70182b6618fa99.bindTooltip(
                 `<div>
                      Medialuna Valpo
                  </div>`,
@@ -584,17 +668,17 @@
             );
         
     
-                marker_65e1f20c87d82771f3f2a457773d3fed.setIcon(icon_05e75fa4d390249647e9295b96e20014);
+                marker_e7b2f464a93fd4994a70182b6618fa99.setIcon(icon_e2e3633d4f4a7e3c80ca5e2610252f94);
             
     
-            var marker_a188dbf55be3e4be211a1db109afe5a0 = L.marker(
+            var marker_b99395a5e105837392bc749db0667dc2 = L.marker(
                 [-33.04, -71.627],
                 {
 }
-            ).addTo(map_1094a70e9585089568bb3a963f19d016);
+            ).addTo(map_ef327d83beee25569619876c914a3a29);
         
     
-            var icon_b52d8d63282ce930c66eaf10d4475a33 = L.AwesomeMarkers.icon(
+            var icon_d1e596eeaf436c1f82e0bf7fc2004953 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightgray",
   "iconColor": "white",
@@ -605,24 +689,24 @@
             );
         
     
-        var popup_d7541ca6be19fa1031b268d03a2e59bd = L.popup({
+        var popup_37fed88a304686fa7b3015aa8c553714 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_64a436a2966411ed6c230ac8d351d7b2 = $(`<div id="html_64a436a2966411ed6c230ac8d351d7b2" style="width: 100.0%; height: 100.0%;">         <b>Galería Bahía Utópica</b><br>         <hr style="margin: 3px 0;">         🏠 Almirante Montt 372, Cerro Concepción<br>         📞 +56 9 5352 6979<br>         <a href='https://www.instagram.com/galeriabahiautopica' target='_blank'>@galeriabahiautopica</a>     </div>`)[0];
-                popup_d7541ca6be19fa1031b268d03a2e59bd.setContent(html_64a436a2966411ed6c230ac8d351d7b2);
+                var html_0312219e9893dbc8ff60690787336b88 = $(`<div id="html_0312219e9893dbc8ff60690787336b88" style="width: 100.0%; height: 100.0%;">         <b>Galería Bahía Utópica</b><br>         <hr style="margin: 3px 0;">         🏠 Almirante Montt 372, Cerro Concepción<br>         📞 +56 9 5352 6979<br>         <a href='https://www.instagram.com/galeriabahiautopica' target='_blank'>@galeriabahiautopica</a>     </div>`)[0];
+                popup_37fed88a304686fa7b3015aa8c553714.setContent(html_0312219e9893dbc8ff60690787336b88);
             
         
 
-        marker_a188dbf55be3e4be211a1db109afe5a0.bindPopup(popup_d7541ca6be19fa1031b268d03a2e59bd)
+        marker_b99395a5e105837392bc749db0667dc2.bindPopup(popup_37fed88a304686fa7b3015aa8c553714)
         ;
 
         
     
     
-            marker_a188dbf55be3e4be211a1db109afe5a0.bindTooltip(
+            marker_b99395a5e105837392bc749db0667dc2.bindTooltip(
                 `<div>
                      Galería Bahía Utópica
                  </div>`,
@@ -632,17 +716,17 @@
             );
         
     
-                marker_a188dbf55be3e4be211a1db109afe5a0.setIcon(icon_b52d8d63282ce930c66eaf10d4475a33);
+                marker_b99395a5e105837392bc749db0667dc2.setIcon(icon_d1e596eeaf436c1f82e0bf7fc2004953);
             
     
-            var marker_aa2eddb4cd8a5aa46f285cda5deb2bed = L.marker(
+            var marker_62e93e32cd0a63286a6b93952e191e2c = L.marker(
                 [-33.0403, -71.6268],
                 {
 }
-            ).addTo(map_1094a70e9585089568bb3a963f19d016);
+            ).addTo(map_ef327d83beee25569619876c914a3a29);
         
     
-            var icon_3ee7cab4e3f024aef2806fd1c480f9fa = L.AwesomeMarkers.icon(
+            var icon_128f55099324a76bc055418251c2ea14 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightgray",
   "iconColor": "white",
@@ -653,24 +737,24 @@
             );
         
     
-        var popup_26d3fd5ce9d0131dbf942b0762349aef = L.popup({
+        var popup_1881e5154f6d35db809cab258753d0ec = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_957544a3a357059fc7cfcec4f3ac77fe = $(`<div id="html_957544a3a357059fc7cfcec4f3ac77fe" style="width: 100.0%; height: 100.0%;">         <b>Sala Galia</b><br>         <hr style="margin: 3px 0;">         🏠 Galos 685, Cerro Concepción<br>         📞 No public phone<br>         <a href='https://www.instagram.com/sala_galia' target='_blank'>@sala_galia</a>     </div>`)[0];
-                popup_26d3fd5ce9d0131dbf942b0762349aef.setContent(html_957544a3a357059fc7cfcec4f3ac77fe);
+                var html_25b28870812339d827b783fdc7e804ca = $(`<div id="html_25b28870812339d827b783fdc7e804ca" style="width: 100.0%; height: 100.0%;">         <b>Sala Galia</b><br>         <hr style="margin: 3px 0;">         🏠 Galos 685, Cerro Concepción<br>         📞 No public phone<br>         <a href='https://www.instagram.com/sala_galia' target='_blank'>@sala_galia</a>     </div>`)[0];
+                popup_1881e5154f6d35db809cab258753d0ec.setContent(html_25b28870812339d827b783fdc7e804ca);
             
         
 
-        marker_aa2eddb4cd8a5aa46f285cda5deb2bed.bindPopup(popup_26d3fd5ce9d0131dbf942b0762349aef)
+        marker_62e93e32cd0a63286a6b93952e191e2c.bindPopup(popup_1881e5154f6d35db809cab258753d0ec)
         ;
 
         
     
     
-            marker_aa2eddb4cd8a5aa46f285cda5deb2bed.bindTooltip(
+            marker_62e93e32cd0a63286a6b93952e191e2c.bindTooltip(
                 `<div>
                      Sala Galia
                  </div>`,
@@ -680,17 +764,17 @@
             );
         
     
-                marker_aa2eddb4cd8a5aa46f285cda5deb2bed.setIcon(icon_3ee7cab4e3f024aef2806fd1c480f9fa);
+                marker_62e93e32cd0a63286a6b93952e191e2c.setIcon(icon_128f55099324a76bc055418251c2ea14);
             
     
-            var marker_ebc1c44a12c61ff28a00d509dc625acb = L.marker(
+            var marker_31bf77ae31c3a8f46c118e03c4ee75d8 = L.marker(
                 [-33.0395, -71.6288],
                 {
 }
-            ).addTo(map_1094a70e9585089568bb3a963f19d016);
+            ).addTo(map_ef327d83beee25569619876c914a3a29);
         
     
-            var icon_1a14b873f002579d7ffd2a8889e80788 = L.AwesomeMarkers.icon(
+            var icon_78eade0e83bb0ecf47d18e40b013b0c6 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "red",
   "iconColor": "white",
@@ -701,24 +785,24 @@
             );
         
     
-        var popup_abbfcd515e7dc28bff060ce79ac72c3f = L.popup({
+        var popup_582e4e24435d9b83bdf94a6dbd4d481e = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_a0725e84f038bf205ff538992e3c8bf5 = $(`<div id="html_a0725e84f038bf205ff538992e3c8bf5" style="width: 100.0%; height: 100.0%;">         <b>Fauna Hotel & Rte.</b><br>         <hr style="margin: 3px 0;">         🏠 Paseo Dimalow 166, Cerro Alegre<br>         📞 +56 32 327 3485<br>         <a href='https://www.instagram.com/faunahotelrestaurante' target='_blank'>@faunahotelrestaurante</a>     </div>`)[0];
-                popup_abbfcd515e7dc28bff060ce79ac72c3f.setContent(html_a0725e84f038bf205ff538992e3c8bf5);
+                var html_e06e6f556afba87e75b6c8b0f40ceafc = $(`<div id="html_e06e6f556afba87e75b6c8b0f40ceafc" style="width: 100.0%; height: 100.0%;">         <b>Fauna Hotel & Rte.</b><br>         <hr style="margin: 3px 0;">         🏠 Paseo Dimalow 166, Cerro Alegre<br>         📞 +56 32 327 3485<br>         <a href='https://www.instagram.com/faunahotelrestaurante' target='_blank'>@faunahotelrestaurante</a>     </div>`)[0];
+                popup_582e4e24435d9b83bdf94a6dbd4d481e.setContent(html_e06e6f556afba87e75b6c8b0f40ceafc);
             
         
 
-        marker_ebc1c44a12c61ff28a00d509dc625acb.bindPopup(popup_abbfcd515e7dc28bff060ce79ac72c3f)
+        marker_31bf77ae31c3a8f46c118e03c4ee75d8.bindPopup(popup_582e4e24435d9b83bdf94a6dbd4d481e)
         ;
 
         
     
     
-            marker_ebc1c44a12c61ff28a00d509dc625acb.bindTooltip(
+            marker_31bf77ae31c3a8f46c118e03c4ee75d8.bindTooltip(
                 `<div>
                      Fauna Hotel & Rte.
                  </div>`,
@@ -728,17 +812,17 @@
             );
         
     
-                marker_ebc1c44a12c61ff28a00d509dc625acb.setIcon(icon_1a14b873f002579d7ffd2a8889e80788);
+                marker_31bf77ae31c3a8f46c118e03c4ee75d8.setIcon(icon_78eade0e83bb0ecf47d18e40b013b0c6);
             
     
-            var marker_fd91ae8e068034c1e07f7e03d434d12a = L.marker(
+            var marker_e25815b83fc913c2b617691081324b32 = L.marker(
                 [-33.0378, -71.6282],
                 {
 }
-            ).addTo(map_1094a70e9585089568bb3a963f19d016);
+            ).addTo(map_ef327d83beee25569619876c914a3a29);
         
     
-            var icon_fc2fbfcbb44d89e2023cc172bdfee340 = L.AwesomeMarkers.icon(
+            var icon_776bef643237934e2749a6f257ae0d2b = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkred",
   "iconColor": "white",
@@ -749,24 +833,24 @@
             );
         
     
-        var popup_724798a370fe6b3eb011ccaec0ae924d = L.popup({
+        var popup_b24ac32a2d8359def9e1cc4582687806 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_987ff010e1fd9be0ec24f53858bd114c = $(`<div id="html_987ff010e1fd9be0ec24f53858bd114c" style="width: 100.0%; height: 100.0%;">         <b>Alma Mía Valparaíso</b><br>         <hr style="margin: 3px 0;">         🏠 Almirante Montt 402, Cerro Alegre<br>         📞 +56 32 238 6077<br>         <a href='https://www.instagram.com/almamiavalparaiso' target='_blank'>@almamiavalparaiso</a>     </div>`)[0];
-                popup_724798a370fe6b3eb011ccaec0ae924d.setContent(html_987ff010e1fd9be0ec24f53858bd114c);
+                var html_c20cf2f107da1b9cd794e765b034513b = $(`<div id="html_c20cf2f107da1b9cd794e765b034513b" style="width: 100.0%; height: 100.0%;">         <b>Alma Mía Valparaíso</b><br>         <hr style="margin: 3px 0;">         🏠 Almirante Montt 402, Cerro Alegre<br>         📞 +56 32 238 6077<br>         <a href='https://www.instagram.com/almamiavalparaiso' target='_blank'>@almamiavalparaiso</a>     </div>`)[0];
+                popup_b24ac32a2d8359def9e1cc4582687806.setContent(html_c20cf2f107da1b9cd794e765b034513b);
             
         
 
-        marker_fd91ae8e068034c1e07f7e03d434d12a.bindPopup(popup_724798a370fe6b3eb011ccaec0ae924d)
+        marker_e25815b83fc913c2b617691081324b32.bindPopup(popup_b24ac32a2d8359def9e1cc4582687806)
         ;
 
         
     
     
-            marker_fd91ae8e068034c1e07f7e03d434d12a.bindTooltip(
+            marker_e25815b83fc913c2b617691081324b32.bindTooltip(
                 `<div>
                      Alma Mía Valparaíso
                  </div>`,
@@ -776,17 +860,17 @@
             );
         
     
-                marker_fd91ae8e068034c1e07f7e03d434d12a.setIcon(icon_fc2fbfcbb44d89e2023cc172bdfee340);
+                marker_e25815b83fc913c2b617691081324b32.setIcon(icon_776bef643237934e2749a6f257ae0d2b);
             
     
-            var marker_73b213af40470f1f536753997e6a5c01 = L.marker(
+            var marker_b0186fee594b7ff557dec173efb34759 = L.marker(
                 [-33.0383, -71.629],
                 {
 }
-            ).addTo(map_1094a70e9585089568bb3a963f19d016);
+            ).addTo(map_ef327d83beee25569619876c914a3a29);
         
     
-            var icon_6e51f3848b7f41e53527fbb63720d48d = L.AwesomeMarkers.icon(
+            var icon_887aee2e61ab654030330614a899801a = L.AwesomeMarkers.icon(
                 {
   "markerColor": "cadetblue",
   "iconColor": "white",
@@ -797,24 +881,24 @@
             );
         
     
-        var popup_86845fb0626aed75ecb590391132b378 = L.popup({
+        var popup_56ecc1b959a18dc4272a78bb5ac1f46b = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_fc6a09e3bc852c8493a278fb9f1c62a1 = $(`<div id="html_fc6a09e3bc852c8493a278fb9f1c62a1" style="width: 100.0%; height: 100.0%;">         <b>Entre Cerros Café</b><br>         <hr style="margin: 3px 0;">         🏠 Almirante Montt 399, Cerro Alegre<br>         📞 +56 9 8734 6835<br>         <a href='https://www.instagram.com/entrecerrosvalparaiso' target='_blank'>@entrecerrosvalparaiso</a>     </div>`)[0];
-                popup_86845fb0626aed75ecb590391132b378.setContent(html_fc6a09e3bc852c8493a278fb9f1c62a1);
+                var html_535e87f336398b4aa87c76282fecd49d = $(`<div id="html_535e87f336398b4aa87c76282fecd49d" style="width: 100.0%; height: 100.0%;">         <b>Entre Cerros Café</b><br>         <hr style="margin: 3px 0;">         🏠 Almirante Montt 399, Cerro Alegre<br>         📞 +56 9 8734 6835<br>         <a href='https://www.instagram.com/entrecerrosvalparaiso' target='_blank'>@entrecerrosvalparaiso</a>     </div>`)[0];
+                popup_56ecc1b959a18dc4272a78bb5ac1f46b.setContent(html_535e87f336398b4aa87c76282fecd49d);
             
         
 
-        marker_73b213af40470f1f536753997e6a5c01.bindPopup(popup_86845fb0626aed75ecb590391132b378)
+        marker_b0186fee594b7ff557dec173efb34759.bindPopup(popup_56ecc1b959a18dc4272a78bb5ac1f46b)
         ;
 
         
     
     
-            marker_73b213af40470f1f536753997e6a5c01.bindTooltip(
+            marker_b0186fee594b7ff557dec173efb34759.bindTooltip(
                 `<div>
                      Entre Cerros Café
                  </div>`,
@@ -824,17 +908,17 @@
             );
         
     
-                marker_73b213af40470f1f536753997e6a5c01.setIcon(icon_6e51f3848b7f41e53527fbb63720d48d);
+                marker_b0186fee594b7ff557dec173efb34759.setIcon(icon_887aee2e61ab654030330614a899801a);
             
     
-            var marker_07708a9a32351b287564968c3fb6a4fd = L.marker(
+            var marker_1a6f03ff75c0d3d375e03f15a55f30ee = L.marker(
                 [-33.0388, -71.631],
                 {
 }
-            ).addTo(map_1094a70e9585089568bb3a963f19d016);
+            ).addTo(map_ef327d83beee25569619876c914a3a29);
         
     
-            var icon_93240abb6104533efa04da3d507c2ed5 = L.AwesomeMarkers.icon(
+            var icon_a7a9da86cd552a1386039ad07d5e6718 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "pink",
   "iconColor": "white",
@@ -845,24 +929,24 @@
             );
         
     
-        var popup_30afee1175685c292251efa94bd32559 = L.popup({
+        var popup_0a693ff1ce042a554a9dae4a379f56ee = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_c2db6b2bfd47c3b1db73133c5f0fc738 = $(`<div id="html_c2db6b2bfd47c3b1db73133c5f0fc738" style="width: 100.0%; height: 100.0%;">         <b>SEPTIMA Pastelería</b><br>         <hr style="margin: 3px 0;">         🏠 Concepción 213, Cerro Concepción<br>         📞 +56 32 318 4038<br>         <a href='https://www.instagram.com/septima.pasteleria' target='_blank'>@septima.pasteleria</a>     </div>`)[0];
-                popup_30afee1175685c292251efa94bd32559.setContent(html_c2db6b2bfd47c3b1db73133c5f0fc738);
+                var html_e7d0ad99b244a01d4eb8a4306379162d = $(`<div id="html_e7d0ad99b244a01d4eb8a4306379162d" style="width: 100.0%; height: 100.0%;">         <b>SEPTIMA Pastelería</b><br>         <hr style="margin: 3px 0;">         🏠 Concepción 213, Cerro Concepción<br>         📞 +56 32 318 4038<br>         <a href='https://www.instagram.com/septima.pasteleria' target='_blank'>@septima.pasteleria</a>     </div>`)[0];
+                popup_0a693ff1ce042a554a9dae4a379f56ee.setContent(html_e7d0ad99b244a01d4eb8a4306379162d);
             
         
 
-        marker_07708a9a32351b287564968c3fb6a4fd.bindPopup(popup_30afee1175685c292251efa94bd32559)
+        marker_1a6f03ff75c0d3d375e03f15a55f30ee.bindPopup(popup_0a693ff1ce042a554a9dae4a379f56ee)
         ;
 
         
     
     
-            marker_07708a9a32351b287564968c3fb6a4fd.bindTooltip(
+            marker_1a6f03ff75c0d3d375e03f15a55f30ee.bindTooltip(
                 `<div>
                      SEPTIMA Pastelería
                  </div>`,
@@ -872,17 +956,17 @@
             );
         
     
-                marker_07708a9a32351b287564968c3fb6a4fd.setIcon(icon_93240abb6104533efa04da3d507c2ed5);
+                marker_1a6f03ff75c0d3d375e03f15a55f30ee.setIcon(icon_a7a9da86cd552a1386039ad07d5e6718);
             
     
-            var marker_b118cc5769ae6ce5713fc51fc8070315 = L.marker(
+            var marker_9763f275a058dd3d917cc31e4b79e986 = L.marker(
                 [-33.0393, -71.6295],
                 {
 }
-            ).addTo(map_1094a70e9585089568bb3a963f19d016);
+            ).addTo(map_ef327d83beee25569619876c914a3a29);
         
     
-            var icon_5d513cc2c70466ae41fc7451619c3820 = L.AwesomeMarkers.icon(
+            var icon_1e2a6a095bf80eccd11e1df362fb5c94 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkred",
   "iconColor": "white",
@@ -893,24 +977,24 @@
             );
         
     
-        var popup_d21979f4e84cab786da8b18af45b637d = L.popup({
+        var popup_b875a7f73264f20d69548f4123beb49d = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_9795b8fd2f503dfe5714bf63951746d9 = $(`<div id="html_9795b8fd2f503dfe5714bf63951746d9" style="width: 100.0%; height: 100.0%;">         <b>Fat Kid</b><br>         <hr style="margin: 3px 0;">         🏠 Lautaro Rosas 450, Cerro Alegre<br>         📞 +56 9 7462 8769<br>         <a href='https://www.instagram.com/fatkidburgers' target='_blank'>@fatkidburgers</a>     </div>`)[0];
-                popup_d21979f4e84cab786da8b18af45b637d.setContent(html_9795b8fd2f503dfe5714bf63951746d9);
+                var html_1aab143b6ac98ab0d91cf6d010b3e2e5 = $(`<div id="html_1aab143b6ac98ab0d91cf6d010b3e2e5" style="width: 100.0%; height: 100.0%;">         <b>Fat Kid</b><br>         <hr style="margin: 3px 0;">         🏠 Lautaro Rosas 450, Cerro Alegre<br>         📞 +56 9 7462 8769<br>         <a href='https://www.instagram.com/fatkidburgers' target='_blank'>@fatkidburgers</a>     </div>`)[0];
+                popup_b875a7f73264f20d69548f4123beb49d.setContent(html_1aab143b6ac98ab0d91cf6d010b3e2e5);
             
         
 
-        marker_b118cc5769ae6ce5713fc51fc8070315.bindPopup(popup_d21979f4e84cab786da8b18af45b637d)
+        marker_9763f275a058dd3d917cc31e4b79e986.bindPopup(popup_b875a7f73264f20d69548f4123beb49d)
         ;
 
         
     
     
-            marker_b118cc5769ae6ce5713fc51fc8070315.bindTooltip(
+            marker_9763f275a058dd3d917cc31e4b79e986.bindTooltip(
                 `<div>
                      Fat Kid
                  </div>`,
@@ -920,17 +1004,17 @@
             );
         
     
-                marker_b118cc5769ae6ce5713fc51fc8070315.setIcon(icon_5d513cc2c70466ae41fc7451619c3820);
+                marker_9763f275a058dd3d917cc31e4b79e986.setIcon(icon_1e2a6a095bf80eccd11e1df362fb5c94);
             
     
-            var marker_6b5d97ef5bc7b88f2da7b5acb176a43a = L.marker(
+            var marker_ca68eafbae771913ccab6581df2d5d6f = L.marker(
                 [-33.0398, -71.6298],
                 {
 }
-            ).addTo(map_1094a70e9585089568bb3a963f19d016);
+            ).addTo(map_ef327d83beee25569619876c914a3a29);
         
     
-            var icon_b100ed4bfd979ebd21f98c88cc50f334 = L.AwesomeMarkers.icon(
+            var icon_14d538e05218d63c5f2fb67c75ca6401 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkred",
   "iconColor": "white",
@@ -941,24 +1025,24 @@
             );
         
     
-        var popup_c56da98f90e5867056cc48f0f03874e8 = L.popup({
+        var popup_b9ea0ba00fac598a4284b6144d6a2615 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_a49d82c0a8da9a67967b131378185862 = $(`<div id="html_a49d82c0a8da9a67967b131378185862" style="width: 100.0%; height: 100.0%;">         <b>Momo</b><br>         <hr style="margin: 3px 0;">         🏠 Almirante Montt 427, Cerro Alegre<br>         📞 +56 9 8225 6173<br>         <a href='https://www.instagram.com/momovalparaiso' target='_blank'>@momovalparaiso</a>     </div>`)[0];
-                popup_c56da98f90e5867056cc48f0f03874e8.setContent(html_a49d82c0a8da9a67967b131378185862);
+                var html_1b51690aff324ca5084d5b70cc442580 = $(`<div id="html_1b51690aff324ca5084d5b70cc442580" style="width: 100.0%; height: 100.0%;">         <b>Momo</b><br>         <hr style="margin: 3px 0;">         🏠 Almirante Montt 427, Cerro Alegre<br>         📞 +56 9 8225 6173<br>         <a href='https://www.instagram.com/momovalparaiso' target='_blank'>@momovalparaiso</a>     </div>`)[0];
+                popup_b9ea0ba00fac598a4284b6144d6a2615.setContent(html_1b51690aff324ca5084d5b70cc442580);
             
         
 
-        marker_6b5d97ef5bc7b88f2da7b5acb176a43a.bindPopup(popup_c56da98f90e5867056cc48f0f03874e8)
+        marker_ca68eafbae771913ccab6581df2d5d6f.bindPopup(popup_b9ea0ba00fac598a4284b6144d6a2615)
         ;
 
         
     
     
-            marker_6b5d97ef5bc7b88f2da7b5acb176a43a.bindTooltip(
+            marker_ca68eafbae771913ccab6581df2d5d6f.bindTooltip(
                 `<div>
                      Momo
                  </div>`,
@@ -968,7 +1052,7 @@
             );
         
     
-                marker_6b5d97ef5bc7b88f2da7b5acb176a43a.setIcon(icon_b100ed4bfd979ebd21f98c88cc50f334);
+                marker_ca68eafbae771913ccab6581df2d5d6f.setIcon(icon_14d538e05218d63c5f2fb67c75ca6401);
             
 </script>
 </html>
